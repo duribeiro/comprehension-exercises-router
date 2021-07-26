@@ -14,25 +14,25 @@ class App extends Component {
     }
     return (
       <BrowserRouter>
+        <Switch>
         <Link to="/">Home</Link>
         <Link to="/About">About</Link>
         <Link to="/Users">Users</Link>
         <Link to="/StrictAccess">StrictAccess</Link>
-        <Switch>
-          <Route
-            path="/Users"
-            render={(props) =>
-              <Users {...props}
-                greetingsMessage="Good Morning"
-              />}
-          />
-          <Route 
-            path="/StrictAccess" 
-            render={() =>
-            <StrictAccess user={user} />}
-          />
-          <Route path="/About" component={About} />
-          <Route exact path="/" component={Home} />
+        <Route
+          path="/Users"
+          render={(props) =>
+            <Users {...props}
+              greetingsMessage="Good Morning"
+            />}
+        />
+        <Route 
+          path="/StrictAccess" 
+          render={() =>
+          <StrictAccess user={user} />}
+        />
+        <Route path="/About" component={About} />
+        <Route exact path="/" component={Home} />
         </Switch>
       </BrowserRouter>
     );
